@@ -9,9 +9,37 @@ public class Ball_Controller : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        StartCoroutine(Pause());
+
+
+
+
+
+
+
         //The ball will go to a random direction
         rb = GetComponent<Rigidbody>();
 
+       
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(transform.position.x < -25f) {
+            StartCoroutine(Pause());
+        }
+        if (transform.position.x > 25f)
+        {
+
+        }
+    }
+
+
+    void LaunchBall ()
+    {
+        transform.position = Vector3.zero;
         //randomisation for ball start
         int xDirection = Random.Range(0, 2);
         int yDirection = Random.Range(0, 2);
@@ -38,12 +66,12 @@ public class Ball_Controller : MonoBehaviour
             launchDirection.y = 8f;
         }
         rb.velocity = launchDirection;
-
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator Pause ()
     {
+        
+        yield return new WaitForSeconds(2.5f);
+        LaunchBall();
 
     }
     void OnCollisionEnter(Collision hit)
