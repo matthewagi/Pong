@@ -190,12 +190,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737223122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.3, y: 0.18, z: 0}
-  m_LocalScale: {x: 0.49937505, y: 3.862653, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.987303, y: 0.277863, z: 0}
+  m_LocalScale: {x: 0.7708768, y: 5.9627123, z: 1.5436832}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 901224594}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &737223127
 Rigidbody:
@@ -204,14 +204,14 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737223122}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000000
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 0
+  m_Interpolate: 1
+  m_Constraints: 124
+  m_CollisionDetection: 1
 --- !u!1 &901224590
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,11 +292,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901224590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.64780134, y: 0.64780134, z: 0.64780134}
-  m_Children: []
+  m_Children:
+  - {fileID: 737223126}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &901224595
 MonoBehaviour:
@@ -316,7 +317,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901224590}
   serializedVersion: 2
-  m_Mass: 1000000
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -364,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459578745
 GameObject:
@@ -486,7 +487,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602611183
 GameObject:
@@ -565,6 +566,7 @@ GameObject:
   - component: {fileID: 1936171745}
   - component: {fileID: 1936171744}
   - component: {fileID: 1936171748}
+  - component: {fileID: 1936171749}
   m_Layer: 0
   m_Name: Left_Bat
   m_TagString: Untagged
@@ -636,7 +638,7 @@ Transform:
   m_LocalScale: {x: 0.49937505, y: 3.862653, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1936171748
 Rigidbody:
@@ -653,6 +655,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &1936171749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936171743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e94d328b4e2e244eb2054b3a3f6da67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2074684070
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,5 +705,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

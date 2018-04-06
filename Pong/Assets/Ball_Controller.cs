@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Ball_Controller : MonoBehaviour
 {
+
     //rigidbody reference
     Rigidbody rb;
     // Use this for initialization
     void Start()
     {
+
         StartCoroutine(Pause());
 
 
@@ -108,7 +111,8 @@ public class Ball_Controller : MonoBehaviour
         // Directions on collision with bat determined by the width of bat
         if (hit.gameObject.name == "Left_Bat")
 
-            rb.velocity = new Vector3(13f, 0f, 0f);
+            
+        rb.velocity = new Vector3(13f, 0f, 0f);
        
             if (transform.position.y - hit.gameObject.transform.position.y < -1)
             {
@@ -139,6 +143,13 @@ public class Ball_Controller : MonoBehaviour
                 {
                     rb.velocity = new Vector3(-8f, 8f, 0f);
                 }
+
+
+            if (transform.childCount > 0)
+            {
+                Debug.Log("AIhit");
+           
+            }
             }
         }
     }
