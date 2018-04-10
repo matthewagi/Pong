@@ -8,10 +8,11 @@ public class Ball_Controller : MonoBehaviour
 
     //rigidbody reference
     Rigidbody rb;
+    Vector3 startPos;
     // Use this for initialization
     void Start()
     {
-
+        startPos = transform.position;
         StartCoroutine(Pause());
 
 
@@ -31,14 +32,17 @@ public class Ball_Controller : MonoBehaviour
     void Update()
     {
         if(transform.position.x < -25f) {
-            StartCoroutine(Pause());
+            
         }
         if (transform.position.x > 25f)
         {
 
         }
+
+       
     }
 
+   
 
     void LaunchBall ()
     {
@@ -77,7 +81,19 @@ public class Ball_Controller : MonoBehaviour
         LaunchBall();
 
     }
-    void OnCollisionEnter(Collision hit)
+    // Reset game
+    void OnTriggerEnter(Collider other)
+    {
+
+        StartCoroutine(Pause());
+    }
+
+
+   
+
+
+
+        void OnCollisionEnter(Collision hit)
     {
 
 
@@ -94,7 +110,10 @@ public class Ball_Controller : MonoBehaviour
             Debug.Log("Hit Top");
             rb.velocity = new Vector3(SpeedInXDirection, -8f, 0f);
         }
-        if (hit.gameObject.name == "bottombound")
+
+
+        
+            if (hit.gameObject.name == "bottombound")
         {
             float SpeedInXDirection = 0f;
 
@@ -151,7 +170,9 @@ public class Ball_Controller : MonoBehaviour
            
             }
             }
+
         }
+
     }
 
         
