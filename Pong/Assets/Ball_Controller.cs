@@ -1,37 +1,56 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Ball_Controller : MonoBehaviour
 {
-
+   private int p2currentScore;
+    public Text p2scoreText;
+    private int p1currentScore;
+    public Text p1scoreText;
     //rigidbody reference
     Rigidbody rb;
     Vector3 startPos;
     // Use this for initialization
     void Start()
     {
+
+        p2currentScore = 0;
+        p1currentScore = 0;
         startPos = transform.position;
         StartCoroutine(Pause());
 
+        
 
 
 
 
-
-
-        //The ball will go to a random direction
-        rb = GetComponent<Rigidbody>();
+    //The ball will go to a random direction
+    rb = GetComponent<Rigidbody>();
 
        
 
     }
 
+
+   
+
+    
+
+
+
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x < -25f) {
+
+        p1scoreText.text = "" + p1currentScore;
+        p2scoreText.text = "" + p2currentScore;
+
+
+
+        if (transform.position.x < -25f) {
             
         }
         if (transform.position.x > 25f)
@@ -82,10 +101,24 @@ public class Ball_Controller : MonoBehaviour
 
     }
     // Reset game
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider score)
     {
+        if (score.gameObject.tag == "p2score")
+        {
+            p2currentScore++;
+            StartCoroutine(Pause());
+            Debug.Log("SCORED!");
+        }   
 
-        StartCoroutine(Pause());
+        if (score.gameObject.tag == "p1score")
+        {
+            p1currentScore++;
+            StartCoroutine(Pause());
+            Debug.Log("SCORED!");
+        }
+
+
+
     }
 
 
