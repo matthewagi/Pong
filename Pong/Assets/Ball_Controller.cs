@@ -1,56 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class Ball_Controller : MonoBehaviour
 {
-   private int p2currentScore;
-    public Text p2scoreText;
-    private int p1currentScore;
-    public Text p1scoreText;
+
     //rigidbody reference
     Rigidbody rb;
 
     // Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
 
         p2currentScore = 0;
         p1currentScore = 0;
         
+=======
+        startPos = transform.position;
+>>>>>>> parent of 2c004b0... added score
         StartCoroutine(Pause());
 
-        
 
 
 
 
-    //The ball will go to a random direction
-    rb = GetComponent<Rigidbody>();
+
+
+        //The ball will go to a random direction
+        rb = GetComponent<Rigidbody>();
 
        
 
     }
 
-
-   
-
-    
-
-
-
     // Update is called once per frame
     void Update()
     {
-
-        p1scoreText.text = "" + p1currentScore;
-        p2scoreText.text = "" + p2currentScore;
-
-
-
-        if (transform.position.x < -25f) {
+        if(transform.position.x < -25f) {
             
         }
         if (transform.position.x > 25f)
@@ -101,8 +89,9 @@ public class Ball_Controller : MonoBehaviour
 
     }
     // Reset game
-    void OnTriggerEnter(Collider score)
+    void OnTriggerEnter(Collider other)
     {
+<<<<<<< HEAD
         if (score.gameObject.tag == "p2score")
         {
             p2currentScore++;
@@ -127,7 +116,10 @@ public class Ball_Controller : MonoBehaviour
             Debug.Log("p1Wins");
         }
 
+=======
+>>>>>>> parent of 2c004b0... added score
 
+        StartCoroutine(Pause());
     }
 
 
