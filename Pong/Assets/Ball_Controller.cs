@@ -12,18 +12,13 @@ public class Ball_Controller : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-<<<<<<< HEAD
 
         p2currentScore = 0;
         p1currentScore = 0;
-        
-=======
+       
         startPos = transform.position;
->>>>>>> parent of 2c004b0... added score
+
         StartCoroutine(Pause());
-
-
-
 
 
 
@@ -91,7 +86,7 @@ public class Ball_Controller : MonoBehaviour
     // Reset game
     void OnTriggerEnter(Collider other)
     {
-<<<<<<< HEAD
+
         if (score.gameObject.tag == "p2score")
         {
             p2currentScore++;
@@ -116,8 +111,6 @@ public class Ball_Controller : MonoBehaviour
             Debug.Log("p1Wins");
         }
 
-=======
->>>>>>> parent of 2c004b0... added score
 
         StartCoroutine(Pause());
     }
