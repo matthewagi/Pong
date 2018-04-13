@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - bounds
+  - p2score
+  - p1score
+  - ball
   layers:
   - Default
   - TransparentFX

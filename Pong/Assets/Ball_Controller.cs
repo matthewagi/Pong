@@ -12,14 +12,14 @@ public class Ball_Controller : MonoBehaviour
     public Text p1scoreText;
     //rigidbody reference
     Rigidbody rb;
-    Vector3 startPos;
+
     // Use this for initialization
     void Start()
     {
 
         p2currentScore = 0;
         p1currentScore = 0;
-        startPos = transform.position;
+        
         StartCoroutine(Pause());
 
         
@@ -117,6 +117,15 @@ public class Ball_Controller : MonoBehaviour
             Debug.Log("SCORED!");
         }
 
+        if(p1currentScore == 10)
+        {
+            Debug.Log("p1Wins");
+        }
+
+        if (p2currentScore == 10)
+        {
+            Debug.Log("p1Wins");
+        }
 
 
     }
